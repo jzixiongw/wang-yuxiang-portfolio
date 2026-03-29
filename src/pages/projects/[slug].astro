@@ -12,20 +12,24 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 const { project } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+
 ---
 
 <Layout title={`${project.title} - 王宇翔`}>
   <div class="project-detail">
-    <a class="back-link" href={base}>← 返回首页</a>
+    <a class="back-link" href={`${base}/`}>← 返回首页</a>
     <img
       class="project-detail__cover"
-      src={`${base}${project.cover.replace(/^\//, '')}`}
+      src={`${base}${project.cover}`}
       alt={project.title}
     />
     <h1 class="project-detail__title">{project.title}</h1>
     {project.date && <p class="project-detail__date">{project.date}</p>}
     <p class="project-detail__description">{project.description}</p>
-    <VideoEmbed url={project.vodEmbedUrl} />
+    {project.vodEmbedUrls.length > 0
+      ? project.vodEmbedUrls.map((url) => <VideoEmbed url={url} />)
+      : <VideoEmbed url="" />
+    }
   </div>
 </Layout>
