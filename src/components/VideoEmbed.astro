@@ -16,6 +16,9 @@ const isMp4 = !isPlaceholder && url.endsWith('.mp4');
       <video
         src={url}
         controls
+        autoplay
+        muted
+        loop
         playsinline
         style="position:absolute;top:0;left:0;width:100%;height:100%;"
       ></video>
