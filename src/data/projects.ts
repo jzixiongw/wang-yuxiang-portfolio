@@ -17,12 +17,39 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: 'face-rigging',
+    title: 'Face Rigging 项目',
+    date: '2025-01',
+    cover: '/images/face-rigging-cover.jpg',
+    description: '作品详细介绍待补充。',
+    featured: true,
+    vodEmbedUrls: [],
+  },
+  {
+    slug: 'full-body-rigging',
+    title: 'Full Body Rigging 项目',
+    date: '2025-01',
+    cover: '/images/full-body-rigging-cover.jpg',
+    description: '作品详细介绍待补充。',
+    featured: true,
+    vodEmbedUrls: [],
+  },
+  {
+    slug: 'animation',
+    title: 'Animation 项目',
+    date: '2025-01',
+    cover: '/images/animation-cover.jpg',
+    description: '作品详细介绍待补充。',
+    featured: false,
+    vodEmbedUrls: [],
+  },
+  {
     slug: 'davinci',
     title: 'DaVinci 项目',
     date: '2025-01',
     cover: '/images/davinci-cover.jpg',
     description: '作品详细介绍待补充。',
-    featured: true,
+    featured: false,
     vodEmbedUrls: [
       'https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/8d37c7325145403719699194475/cN5PfpcZSd4A.mp4',
       'https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/ac6700825145403719774314921/BXzFUhaIzSgA.mp4',
@@ -34,7 +61,7 @@ export const projects: Project[] = [
     date: '2025-01',
     cover: '/images/maya-light-cover.jpg',
     description: '作品详细介绍待补充。',
-    featured: true,
+    featured: false,
     vodEmbedUrls: ['https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/ac66521a5145403719774313122/akvG5PwjiyEA.mp4'],
   },
   {
@@ -43,7 +70,7 @@ export const projects: Project[] = [
     date: '2025-01',
     cover: '/images/nuke-cover.jpg',
     description: '作品详细介绍待补充。',
-    featured: true,
+    featured: false,
     vodEmbedUrls: [],
     videoItems: [
       { url: 'https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/e78e47855145403720508567855/gWJpKjG1YnoA.mp4', title: '屏幕替换', caption: '字幕说明待补充' },
@@ -58,7 +85,7 @@ export const projects: Project[] = [
     date: '2025-01',
     cover: '/images/taison-cover.jpg',
     description: '作品详细介绍待补充。',
-    featured: false,
+    featured: true,
     vodEmbedUrls: [
       'https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/8d3853525145403719699195456/LPiJSN9vC4MA.mp4',
     ],
@@ -69,7 +96,7 @@ export const projects: Project[] = [
     date: '2025-01',
     cover: '/images/ue-pcg-cover.jpg',
     description: '作品详细介绍待补充。',
-    featured: false,
+    featured: true,
     vodEmbedUrls: ['https://1417160487.vod-qcloud.com/d8e03951vodtranscq1417160487/076e21205145403719700525575/v.f100070.mp4'],
   },
   {
