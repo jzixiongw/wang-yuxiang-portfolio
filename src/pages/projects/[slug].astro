@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import VideoEmbed from '../../components/VideoEmbed.astro';
+import { projects } from '../../data/projects';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+};
+
+const { project } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title={`${project.title} - 王宇翔`}>
+  <div class="project-detail">
+    <a class="back-link" href={base}>← 返回首页</a>
+    <img
+      class="project-detail__cover"
+      src={`${base}${project.cover.replace(/^\//, '')}`}
+      alt={project.title}
+    />
+    <h1 class="project-detail__title">{project.title}</h1>
+    {project.date && <p class="project-detail__date">{project.date}</p>}
+    <p class="project-detail__description">{project.description}</p>
+    <VideoEmbed url={project.vodEmbedUrl} />
+  </div>
+</Layout>

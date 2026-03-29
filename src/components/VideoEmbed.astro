@@ -1,0 +1,23 @@
+---
+interface Props {
+  url: string;
+}
+
+const { url } = Astro.props;
+const isPlaceholder = !url || url.includes('placeholder') || url.includes('example.com');
+---
+
+<div class="video-embed">
+  <div class="video-embed__wrapper">
+    {isPlaceholder ? (
+      <div class="video-embed__placeholder">视频嵌入区域（请替换为真实腾讯云 VOD 嵌入链接）</div>
+    ) : (
+      <iframe
+        src={url}
+        allowfullscreen
+        allow="autoplay; encrypted-media"
+        loading="lazy"
+      ></iframe>
+    )}
+  </div>
+</div>

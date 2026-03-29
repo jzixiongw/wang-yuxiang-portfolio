@@ -1,0 +1,29 @@
+---
+---
+
+<button class="dark-toggle" id="dark-toggle" type="button" aria-label="切换深色模式">
+  <span id="toggle-icon">☀</span>
+</button>
+
+<script is:inline>
+  (function () {
+    const btn = document.getElementById('dark-toggle');
+    const icon = document.getElementById('toggle-icon');
+    function updateIcon() {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      icon.textContent = isDark ? '☾' : '☀';
+    }
+    updateIcon();
+    btn.addEventListener('click', function () {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+      updateIcon();
+    });
+  })();
+</script>
