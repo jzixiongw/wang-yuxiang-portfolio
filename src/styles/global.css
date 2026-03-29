@@ -143,6 +143,22 @@ a {
   border-radius: 4px;
 }
 
+/* ========== Project Section ========== */
+.project-section {
+  margin-bottom: calc(var(--spacing-unit) * 6);
+}
+
+.project-section__heading {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: calc(var(--spacing-unit) * 3);
+  padding-bottom: calc(var(--spacing-unit) * 1.5);
+  border-bottom: 1px solid var(--color-border);
+}
+
 /* ========== Project Grid ========== */
 .project-grid {
   display: grid;
@@ -276,7 +292,60 @@ a {
   color: var(--color-text);
 }
 
-/* ========== Responsive ========== */
+/* ========== Video Grid (2x2) ========== */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: calc(var(--spacing-unit) * 3);
+  margin-bottom: calc(var(--spacing-unit) * 6);
+}
+
+@media (max-width: 640px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.video-grid__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-grid__wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.video-grid__wrapper iframe,
+.video-grid__wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-grid__info {
+  padding: calc(var(--spacing-unit) * 1.5) 0 0;
+}
+
+.video-grid__title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.video-grid__caption {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
 @media (max-width: 640px) {
   .hero {
     padding: calc(var(--spacing-unit) * 5) 0 calc(var(--spacing-unit) * 4);

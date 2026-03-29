@@ -6,6 +6,6 @@ import { defineConfig } from 'astro/config';
 // 如果部署到 username.github.io 根域名，则 base 设为 '/'
 export default defineConfig({
   site: 'https://jzixiongw.github.io',
-  base: '/wang-yuxiang-portfolio',
+  base: '/',
   output: 'static',
 });

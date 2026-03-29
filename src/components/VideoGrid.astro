@@ -1,0 +1,44 @@
+---
+interface VideoItem {
+  url: string;
+  title: string;
+  caption?: string;
+}
+
+interface Props {
+  items: VideoItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="video-grid">
+  {items.map((item) => {
+    const isMp4 = item.url.endsWith('.mp4');
+    return (
+      <div class="video-grid__item">
+        <div class="video-grid__wrapper">
+          {isMp4 ? (
+            <video
+              src={item.url}
+              controls
+              playsinline
+              style="position:absolute;top:0;left:0;width:100%;height:100%;"
+            ></video>
+          ) : (
+            <iframe
+              src={item.url}
+              allowfullscreen
+              allow="autoplay; encrypted-media"
+              loading="lazy"
+            ></iframe>
+          )}
+        </div>
+        <div class="video-grid__info">
+          <div class="video-grid__title">{item.title}</div>
+          {item.caption && <div class="video-grid__caption">{item.caption}</div>}
+        </div>
+      </div>
+    );
+  })}
+</div>

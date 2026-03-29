@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Whiteout 项目 - 王宇翔</title><script>
+      (function () {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script><link rel="stylesheet" href="/_astro/index.DIUuQcJq.css"></head> <body> <div class="container"> <header class="site-header"> <div class="site-header__name"> <a href="/">WANG YUXIANG</a> </div> <button class="dark-toggle" id="dark-toggle" type="button" aria-label="切换深色模式"> <span id="toggle-icon">☀</span> </button> <script>
+  (function () {
+    const btn = document.getElementById('dark-toggle');
+    const icon = document.getElementById('toggle-icon');
+    function updateIcon() {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      icon.textContent = isDark ? '☾' : '☀';
+    }
+    updateIcon();
+    btn.addEventListener('click', function () {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+      updateIcon();
+    });
+  })();
+</script> </header> <main>  <div class="project-detail"> <a class="back-link" href="/">← 返回首页</a> <img class="project-detail__cover" src="/images/whiteout-cover.jpg" alt="Whiteout 项目"> <h1 class="project-detail__title">Whiteout 项目</h1> <p class="project-detail__date">2025-01</p> <p class="project-detail__description">作品详细介绍待补充。</p> <div class="video-embed"> <div class="video-embed__wrapper"> <video src="https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/f307c0365145403721220048269/arD3pFf6eAQA.mp4" controls playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;"></video> </div> </div> </div>  </main> </div> </body></html>

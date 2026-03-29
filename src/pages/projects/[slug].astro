@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import VideoEmbed from '../../components/VideoEmbed.astro';
+import VideoGrid from '../../components/VideoGrid.astro';
 import { projects } from '../../data/projects';
 import type { GetStaticPaths } from 'astro';
 
@@ -27,9 +28,11 @@ const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
     <h1 class="project-detail__title">{project.title}</h1>
     {project.date && <p class="project-detail__date">{project.date}</p>}
     <p class="project-detail__description">{project.description}</p>
-    {project.vodEmbedUrls.length > 0
-      ? project.vodEmbedUrls.map((url) => <VideoEmbed url={url} />)
-      : <VideoEmbed url="" />
+    {project.videoItems
+      ? <VideoGrid items={project.videoItems} />
+      : project.vodEmbedUrls.length > 0
+        ? project.vodEmbedUrls.map((url) => <VideoEmbed url={url} />)
+        : <VideoEmbed url="" />
     }
   </div>
 </Layout>
