@@ -20,19 +20,33 @@ const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 <Layout title={`${project.title} - 王宇翔`}>
   <div class="project-detail">
     <a class="back-link" href={`${base}/`}>← 返回首页</a>
-    <img
-      class="project-detail__cover"
-      src={`${base}${project.cover}`}
-      alt={project.title}
-    />
-    <h1 class="project-detail__title">{project.title}</h1>
-    {project.date && <p class="project-detail__date">{project.date}</p>}
-    <p class="project-detail__description">{project.description}</p>
-    {project.videoItems
-      ? <VideoGrid items={project.videoItems} />
-      : project.vodEmbedUrls.length > 0
-        ? project.vodEmbedUrls.map((url) => <VideoEmbed url={url} />)
-        : <VideoEmbed url="" />
-    }
+    {project.pdfUrl ? (
+      <h1 class="project-detail__title">{project.title}</h1>
+      <p class="project-detail__description">{project.description}</p>
+      <div class="project-detail__pdf">
+        <iframe
+          src={`${base}${project.pdfUrl}`}
+          width="100%"
+          style="height:85vh;border:none;border-radius:8px;"
+        ></iframe>
+      </div>
+    ) : (
+      <>
+        <img
+          class="project-detail__cover"
+          src={`${base}${project.cover}`}
+          alt={project.title}
+        />
+        <h1 class="project-detail__title">{project.title}</h1>
+        {/* date removed */}
+        <p class="project-detail__description">{project.description}</p>
+        {project.videoItems
+          ? <VideoGrid items={project.videoItems} />
+          : project.vodEmbedUrls.length > 0
+            ? project.vodEmbedUrls.map((url) => <VideoEmbed url={url} />)
+            : <VideoEmbed url="" />
+        }
+      </>
+    )}
   </div>
 </Layout>
