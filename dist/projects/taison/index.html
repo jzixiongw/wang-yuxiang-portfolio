@@ -4,8 +4,29 @@
         if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
           document.documentElement.setAttribute('data-theme', 'dark');
         }
+        var lang = localStorage.getItem('lang') || 'cn';
+        document.documentElement.setAttribute('data-lang', lang);
       })();
-    </script><link rel="stylesheet" href="/_astro/index.DIUuQcJq.css"></head> <body> <div class="container"> <header class="site-header"> <div class="site-header__name"> <a href="/">WANG YUXIANG</a> </div> <button class="dark-toggle" id="dark-toggle" type="button" aria-label="切换深色模式"> <span id="toggle-icon">☀</span> </button> <script>
+    </script><link rel="stylesheet" href="/_astro/index.BNJE74EC.css"></head> <body> <div class="container"> <header class="site-header"> <div class="site-header__name"> <a href="/">WANG YUXIANG</a> </div> <div class="site-header__controls"> <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language"> <span id="lang-label">EN</span> </button> <script>
+  (function () {
+    const btn = document.getElementById('lang-toggle');
+    const label = document.getElementById('lang-label');
+    function getLang() {
+      return localStorage.getItem('lang') || 'cn';
+    }
+    function applyLang(lang) {
+      document.documentElement.setAttribute('data-lang', lang);
+      label.textContent = lang === 'cn' ? 'EN' : '中';
+    }
+    applyLang(getLang());
+    btn.addEventListener('click', function () {
+      var current = getLang();
+      var next = current === 'cn' ? 'en' : 'cn';
+      localStorage.setItem('lang', next);
+      applyLang(next);
+    });
+  })();
+</script> <button class="dark-toggle" id="dark-toggle" type="button" aria-label="切换深色模式"> <span id="toggle-icon">☀</span> </button> <script>
   (function () {
     const btn = document.getElementById('dark-toggle');
     const icon = document.getElementById('toggle-icon');
@@ -26,4 +47,4 @@
       updateIcon();
     });
   })();
-</script> </header> <main>  <div class="project-detail"> <a class="back-link" href="/">← 返回首页</a> <img class="project-detail__cover" src="/images/taison-cover.jpg" alt="Taison 项目"> <h1 class="project-detail__title">Taison 项目</h1> <p class="project-detail__date">2025-01</p> <p class="project-detail__description">作品详细介绍待补充。</p> <div class="video-embed"> <div class="video-embed__wrapper"> <video src="https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/8d3853525145403719699195456/LPiJSN9vC4MA.mp4" controls playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;"></video> </div> </div> </div>  </main> </div> </body></html>
+</script> </div> </header> <main>  <div class="project-detail"> <a class="back-link" href="/"> <span class="lang-cn">← 返回首页</span> <span class="lang-en">← Back to Home</span> </a>  <img class="project-detail__cover" src="/images/taison-cover.jpg" alt="Taison 项目"> <h1 class="project-detail__title"> <span class="lang-cn">Taison 项目</span> <span class="lang-en">Taison Project</span> </h1> <p class="project-detail__description"> <span class="lang-cn">这是一个比较抽象聚焦于概念的短片作品，由我和其他团队成员一起在ue5中制作.所有的资产都为团队自己制作.我在其中参与了前中后期的大部分工作，诸如前期的想法落地，分镜，角色，特效等.该作品入围了意大利全国性赛事-TGA的决赛圈，并受邀在罗马展出。</span> <span class="lang-en">An abstract, concept-driven short film created collaboratively in UE5. All assets were made by the team. I contributed to most stages — from ideation, storyboarding, and character work to VFX. The piece was shortlisted for the Italian national TGA competition and exhibited in Rome.</span> </p> <div class="video-embed"> <div class="video-embed__wrapper"> <video src="https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/8d3853525145403719699195456/LPiJSN9vC4MA.mp4" controls autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;"></video> </div> </div> </div>  </main> </div> <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;4ed754ab83244873862418ce4e581f0e&quot;}"></script><!-- End Cloudflare Web Analytics --> </body></html>

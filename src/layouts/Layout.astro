@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import DarkModeToggle from '../components/DarkModeToggle.astro';
+import LanguageToggle from '../components/LanguageToggle.astro';
 
 interface Props {
   title: string;
@@ -22,6 +23,8 @@ const base = import.meta.env.BASE_URL;
         if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
           document.documentElement.setAttribute('data-theme', 'dark');
         }
+        var lang = localStorage.getItem('lang') || 'cn';
+        document.documentElement.setAttribute('data-lang', lang);
       })();
     </script>
   </head>
@@ -31,7 +34,10 @@ const base = import.meta.env.BASE_URL;
         <div class="site-header__name">
           <a href={base}>WANG YUXIANG</a>
         </div>
-        <DarkModeToggle />
+        <div class="site-header__controls">
+          <LanguageToggle />
+          <DarkModeToggle />
+        </div>
       </header>
       <main>
         <slot />

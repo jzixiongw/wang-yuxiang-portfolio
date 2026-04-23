@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import VideoEmbed from '../../components/VideoEmbed.astro';
 import VideoGrid from '../../components/VideoGrid.astro';
 import { projects } from '../../data/projects';
+import { ui } from '../../data/i18n';
 import type { GetStaticPaths } from 'astro';
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -19,10 +20,19 @@ const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 
 <Layout title={`${project.title} - 王宇翔`}>
   <div class="project-detail">
-    <a class="back-link" href={`${base}/`}>← 返回首页</a>
+    <a class="back-link" href={`${base}/`}>
+      <span class="lang-cn">{ui.cn.backHome}</span>
+      <span class="lang-en">{ui.en.backHome}</span>
+    </a>
     {project.pdfUrl ? (
-      <h1 class="project-detail__title">{project.title}</h1>
-      <p class="project-detail__description">{project.description}</p>
+      <h1 class="project-detail__title">
+        <span class="lang-cn">{project.title}</span>
+        <span class="lang-en">{project.titleEn}</span>
+      </h1>
+      <p class="project-detail__description">
+        <span class="lang-cn">{project.description}</span>
+        <span class="lang-en">{project.descriptionEn}</span>
+      </p>
       <div class="project-detail__pdf">
         <iframe
           src={`${base}${project.pdfUrl}`}
@@ -37,9 +47,14 @@ const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
           src={`${base}${project.cover}`}
           alt={project.title}
         />
-        <h1 class="project-detail__title">{project.title}</h1>
-        {/* date removed */}
-        <p class="project-detail__description">{project.description}</p>
+        <h1 class="project-detail__title">
+          <span class="lang-cn">{project.title}</span>
+          <span class="lang-en">{project.titleEn}</span>
+        </h1>
+        <p class="project-detail__description">
+          <span class="lang-cn">{project.description}</span>
+          <span class="lang-en">{project.descriptionEn}</span>
+        </p>
         {project.videoItems
           ? <VideoGrid items={project.videoItems} />
           : project.vodEmbedUrls.length > 0

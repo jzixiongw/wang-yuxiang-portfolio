@@ -2,7 +2,9 @@
 interface VideoItem {
   url: string;
   title: string;
+  titleEn?: string;
   caption?: string;
+  captionEn?: string;
 }
 
 interface Props {
@@ -38,8 +40,16 @@ const { items } = Astro.props;
           )}
         </div>
         <div class="video-grid__info">
-          <div class="video-grid__title">{item.title}</div>
-          {item.caption && <div class="video-grid__caption">{item.caption}</div>}
+          <div class="video-grid__title">
+            <span class="lang-cn">{item.title}</span>
+            {item.titleEn && <span class="lang-en">{item.titleEn}</span>}
+          </div>
+          {(item.caption || item.captionEn) && (
+            <div class="video-grid__caption">
+              {item.caption && <span class="lang-cn">{item.caption}</span>}
+              {item.captionEn && <span class="lang-en">{item.captionEn}</span>}
+            </div>
+          )}
         </div>
       </div>
     );

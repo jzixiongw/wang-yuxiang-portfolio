@@ -1,0 +1,27 @@
+---
+---
+
+<button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">
+  <span id="lang-label">EN</span>
+</button>
+
+<script is:inline>
+  (function () {
+    const btn = document.getElementById('lang-toggle');
+    const label = document.getElementById('lang-label');
+    function getLang() {
+      return localStorage.getItem('lang') || 'cn';
+    }
+    function applyLang(lang) {
+      document.documentElement.setAttribute('data-lang', lang);
+      label.textContent = lang === 'cn' ? 'EN' : '中';
+    }
+    applyLang(getLang());
+    btn.addEventListener('click', function () {
+      var current = getLang();
+      var next = current === 'cn' ? 'en' : 'cn';
+      localStorage.setItem('lang', next);
+      applyLang(next);
+    });
+  })();
+</script>

@@ -21,6 +21,16 @@
   --color-hover: #1e1e1e;
 }
 
+/* ========== i18n Visibility ========== */
+html[data-lang='cn'] .lang-en,
+html:not([data-lang]) .lang-en {
+  display: none !important;
+}
+
+html[data-lang='en'] .lang-cn {
+  display: none !important;
+}
+
 /* ========== Reset ========== */
 *,
 *::before,
@@ -84,7 +94,14 @@ a {
   opacity: 0.7;
 }
 
-/* ========== Dark Mode Toggle ========== */
+.site-header__controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ========== Toggle Buttons ========== */
+.lang-toggle,
 .dark-toggle {
   background: none;
   border: 1px solid var(--color-border);
@@ -92,13 +109,23 @@ a {
   padding: 6px 10px;
   cursor: pointer;
   color: var(--color-text);
-  font-size: 1rem;
   line-height: 1;
   transition: border-color 0.2s ease;
 }
 
+.lang-toggle:hover,
 .dark-toggle:hover {
   border-color: var(--color-text-secondary);
+}
+
+.lang-toggle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.dark-toggle {
+  font-size: 1rem;
 }
 
 /* ========== Hero ========== */

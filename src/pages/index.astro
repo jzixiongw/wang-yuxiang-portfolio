@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { siteConfig } from '../data/site';
+import { siteConfigEn, ui } from '../data/i18n';
 import { projects } from '../data/projects';
 
 const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
@@ -11,23 +12,38 @@ const others = projects.filter((p) => !p.featured);
 
 <Layout title={`${siteConfig.name} - 作品集`}>
   <section class="hero">
-    <h1 class="hero__name">{siteConfig.name}</h1>
-    <p class="hero__school">{siteConfig.school}</p>
-    <p class="hero__intro">{siteConfig.intro}</p>
-    <ul class="hero__resume-items">
+    <h1 class="hero__name">
+      <span class="lang-cn">{siteConfig.name}</span>
+      <span class="lang-en">{siteConfigEn.name}</span>
+    </h1>
+    <p class="hero__school">
+      <span class="lang-cn">{siteConfig.school}</span>
+      <span class="lang-en">{siteConfigEn.school}</span>
+    </p>
+    <p class="hero__intro">
+      <span class="lang-cn">{siteConfig.intro}</span>
+      <span class="lang-en">{siteConfigEn.intro}</span>
+    </p>
+    <ul class="hero__resume-items lang-cn">
       {siteConfig.resumeItems.map((item) => <li>{item}</li>)}
+    </ul>
+    <ul class="hero__resume-items lang-en">
+      {siteConfigEn.resumeItems.map((item) => <li>{item}</li>)}
     </ul>
   </section>
 
   <section class="project-section">
-    <h2 class="project-section__heading">主要项目</h2>
+    <h2 class="project-section__heading">
+      <span class="lang-cn">{ui.cn.featuredProjects}</span>
+      <span class="lang-en">{ui.en.featuredProjects}</span>
+    </h2>
     <div class="project-grid">
       {featured.map((project) => (
         <ProjectCard
           href={`${base}/projects/${project.slug}/`}
           cover={`${base}${project.cover}`}
           title={project.title}
-          // date removed
+          titleEn={project.titleEn}
         />
       ))}
     </div>
@@ -35,14 +51,17 @@ const others = projects.filter((p) => !p.featured);
 
   {others.length > 0 && (
     <section class="project-section">
-      <h2 class="project-section__heading">其他项目</h2>
+      <h2 class="project-section__heading">
+        <span class="lang-cn">{ui.cn.otherProjects}</span>
+        <span class="lang-en">{ui.en.otherProjects}</span>
+      </h2>
       <div class="project-grid">
         {others.map((project) => (
           <ProjectCard
             href={`${base}/projects/${project.slug}/`}
             cover={`${base}${project.cover}`}
             title={project.title}
-            // date removed
+            titleEn={project.titleEn}
           />
         ))}
       </div>
