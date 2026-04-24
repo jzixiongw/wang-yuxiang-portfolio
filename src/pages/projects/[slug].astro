@@ -15,39 +15,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const { project } = Astro.props;
 const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
+const coverUrl = `${base}${project.cover}`;
 
 ---
 
 <Layout title={`${project.title} - 王宇翔`}>
-  <div class="container">
-  <div class="project-detail">
-    <a class="back-link" href={`${base}/`}>
-      <span class="lang-cn">{ui.cn.backHome}</span>
-      <span class="lang-en">{ui.en.backHome}</span>
-    </a>
-    {project.pdfUrl ? (
-      <h1 class="project-detail__title">
-        <span class="lang-cn">{project.title}</span>
-        <span class="lang-en">{project.titleEn}</span>
-      </h1>
-      <p class="project-detail__description">
-        <span class="lang-cn">{project.description}</span>
-        <span class="lang-en">{project.descriptionEn}</span>
-      </p>
-      <div class="project-detail__pdf">
-        <iframe
-          src={`${base}${project.pdfUrl}`}
-          width="100%"
-          style="height:85vh;border:none;border-radius:8px;"
-        ></iframe>
-      </div>
-    ) : (
-      <>
-        <img
-          class="project-detail__cover"
-          src={`${base}${project.cover}`}
-          alt={project.title}
-        />
+  {project.pdfUrl ? (
+    <div class="container">
+      <div class="project-detail">
+        <a class="back-link" href={`${base}/`}>
+          <span class="lang-cn">{ui.cn.backHome}</span>
+          <span class="lang-en">{ui.en.backHome}</span>
+        </a>
         <h1 class="project-detail__title">
           <span class="lang-cn">{project.title}</span>
           <span class="lang-en">{project.titleEn}</span>
@@ -56,14 +35,109 @@ const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
           <span class="lang-cn">{project.description}</span>
           <span class="lang-en">{project.descriptionEn}</span>
         </p>
+        <div class="project-detail__pdf">
+          <iframe
+            src={`${base}${project.pdfUrl}`}
+            width="100%"
+            style="height:85vh;border:none;border-radius:8px;"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <>
+      <section class="detail-hero" style={`--detail-cover: url('${coverUrl}')`}>
+        <canvas id="detail-dots" class="detail-hero__dots" aria-hidden="true"></canvas>
+        <div class="detail-hero__deco-tl" aria-hidden="true">
+          <div class="detail-hero__deco-bracket"></div>
+          <span class="detail-hero__deco-slashes">/ / / / /</span>
+        </div>
+        <span class="detail-hero__deco-plus" aria-hidden="true">+</span>
+        <div class="container detail-hero__inner">
+          <a class="back-link back-link--hero" href={`${base}/`}>
+            <span class="lang-cn">{ui.cn.backHome}</span>
+            <span class="lang-en">{ui.en.backHome}</span>
+          </a>
+          <div class="detail-hero__content">
+            <h1 class="detail-hero__title">
+              <span class="lang-cn">{project.title}</span>
+              <span class="lang-en">{project.titleEn}</span>
+            </h1>
+            <p class="detail-hero__desc">
+              <span class="lang-cn">{project.description}</span>
+              <span class="lang-en">{project.descriptionEn}</span>
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="container detail-body">
         {project.videoItems
           ? <VideoGrid items={project.videoItems} />
           : project.vodEmbedUrls.length > 0
             ? project.vodEmbedUrls.map((url) => <VideoEmbed url={url} />)
             : <VideoEmbed url="" />
         }
-      </>
-    )}
-  </div>
-  </div>
+        {project.images && project.images.map((src) => (
+          <div class="detail-image-wrap">
+            <img src={`${base}${src}`} alt="" class="detail-image" loading="lazy" />
+          </div>
+        ))}
+      </div>
+    </>
+  )}
 </Layout>
+
+<script is:inline>
+  /* ── Detail hero wavy dot field ── */
+  (function () {
+    var canvas = document.getElementById('detail-dots');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var t = 0;
+    var COLS = 36, ROWS = 10;
+
+    function resize() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    function draw() {
+      var W = canvas.width, H = canvas.height;
+      ctx.clearRect(0, 0, W, H);
+      t += 0.006;
+
+      var startX = W * 0.44;
+      var colStep = (W * 0.98 - startX) / (COLS - 1);
+      var rowStep = H / (ROWS - 1);
+
+      for (var row = 0; row < ROWS; row++) {
+        for (var col = 0; col < COLS; col++) {
+          var xFrac = col / (COLS - 1);
+          var x = startX + col * colStep;
+          var yBase = H * 0.04 + row * rowStep;
+          var w1 = Math.sin(col * 0.3 + t * 0.9) * rowStep * 0.5;
+          var w2 = Math.sin(col * 0.14 - row * 0.5 + t * 0.6) * rowStep * 0.28;
+          var w3 = Math.sin(col * 0.06 + row * 0.9 + t * 0.4) * rowStep * 0.16;
+          var y = yBase + w1 + w2 + w3;
+          if (y < 0 || y > H) continue;
+
+          var fadeX = Math.pow(xFrac, 0.45);
+          var yFrac = row / (ROWS - 1);
+          var edgeFade = Math.min(yFrac * 5, 1) * Math.min((1 - yFrac) * 5, 1);
+          var opacity = fadeX * edgeFade * 0.55;
+          if (opacity < 0.005) continue;
+
+          var r = 1.0 + xFrac * 0.4;
+          ctx.beginPath();
+          ctx.arc(x, y, r, 0, 6.283185);
+          ctx.fillStyle = 'rgba(215,215,215,' + Math.min(opacity, 0.65).toFixed(3) + ')';
+          ctx.fill();
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+</script>

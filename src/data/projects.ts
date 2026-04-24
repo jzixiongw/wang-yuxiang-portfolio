@@ -18,6 +18,7 @@ export interface Project {
   vodEmbedUrls: string[];
   videoItems?: VideoItem[];
   pdfUrl?: string;
+  images?: string[];
 }
 
 export const projects: Project[] = [
@@ -42,6 +43,17 @@ export const projects: Project[] = [
     descriptionEn: 'Implemented a full-body rigging system with basic scripting support, featuring IK/FK switching, spine IK, limb stretch & twist (with counter-flip), corrective shapes, and helper joints.',
     featured: true,
     vodEmbedUrls: ['https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/8473b8b75145403721225775420/UWapTOvwAkUA.mp4'],
+  },
+  {
+    slug: 'houdini-vfx',
+    title: 'Houdini VFX',
+    titleEn: 'Houdini VFX',
+    date: '2026-04',
+    cover: '/images/houdini-vfx-cover.jpg',
+    description: '使用houdini制作的水球爆炸的效果，使用了Vellum系统，运用了少量的VEX进行制作.',
+    descriptionEn: 'A water balloon explosion effect created in Houdini, using the Vellum solver with a small amount of VEX.',
+    featured: false,
+    vodEmbedUrls: [],
   },
   {
     slug: 'animation',
@@ -142,5 +154,6 @@ export const projects: Project[] = [
     descriptionEn: 'Created during a Global Game Jam. As a team project, I was mainly responsible for art and contributed gameplay design ideas.',
     featured: true,
     vodEmbedUrls: ['https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/f307c0365145403721220048269/arD3pFf6eAQA.mp4'],
+    images: ['/images/GGJ.jpg'],
   },
 ];

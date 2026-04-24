@@ -3,7 +3,7 @@
         var lang = localStorage.getItem('lang') || 'cn';
         document.documentElement.setAttribute('data-lang', lang);
       })();
-    </script><link rel="stylesheet" href="/_astro/index.i1lCbOyS.css"></head> <body> <header class="site-header"> <div class="container site-header__inner"> <div class="site-header__name"> <a href="/">WANG YUXIANG</a> </div> <div class="site-header__controls"> <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language"> <span id="lang-label">EN</span> </button> <script>
+    </script><link rel="stylesheet" href="/_astro/index.C5T_58x8.css"></head> <body> <header class="site-header"> <div class="container site-header__inner"> <div class="site-header__name"> <a href="/">WANG YUXIANG</a> </div> <div class="site-header__controls"> <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language"> <span id="lang-label">EN</span> </button> <script>
   (function () {
     const btn = document.getElementById('lang-toggle');
     const label = document.getElementById('lang-label');
@@ -22,4 +22,57 @@
       applyLang(next);
     });
   })();
-</script> </div> </div> </header> <main>  <div class="container"> <div class="project-detail"> <a class="back-link" href="/"> <span class="lang-cn">← 返回首页</span> <span class="lang-en">← Back to Home</span> </a>  <img class="project-detail__cover" src="/images/whiteout-cover.jpg" alt="Whiteout 游戏开发项目"> <h1 class="project-detail__title"> <span class="lang-cn">Whiteout 游戏开发项目</span> <span class="lang-en">Whiteout Game Dev Project</span> </h1> <p class="project-detail__description"> <span class="lang-cn">该项目是在参加Global Game Jam时制作的，这是一个小组项目，我主要在项目中负责美术与一部分的玩法创意的提出。</span> <span class="lang-en">Created during a Global Game Jam. As a team project, I was mainly responsible for art and contributed gameplay design ideas.</span> </p> <div class="video-embed"> <div class="video-embed__wrapper"> <video src="https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/f307c0365145403721220048269/arD3pFf6eAQA.mp4" controls autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;"></video> </div> </div> </div> </div>  </main> <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;4ed754ab83244873862418ce4e581f0e&quot;}"></script><!-- End Cloudflare Web Analytics --> </body></html>
+</script> </div> </div> </header> <main>  <section class="detail-hero" style="--detail-cover: url('/images/whiteout-cover.jpg')"> <canvas id="detail-dots" class="detail-hero__dots" aria-hidden="true"></canvas> <div class="detail-hero__deco-tl" aria-hidden="true"> <div class="detail-hero__deco-bracket"></div> <span class="detail-hero__deco-slashes">/ / / / /</span> </div> <span class="detail-hero__deco-plus" aria-hidden="true">+</span> <div class="container detail-hero__inner"> <a class="back-link back-link--hero" href="/"> <span class="lang-cn">← 返回首页</span> <span class="lang-en">← Back to Home</span> </a> <div class="detail-hero__content"> <h1 class="detail-hero__title"> <span class="lang-cn">Whiteout 游戏开发项目</span> <span class="lang-en">Whiteout Game Dev Project</span> </h1> <p class="detail-hero__desc"> <span class="lang-cn">该项目是在参加Global Game Jam时制作的，这是一个小组项目，我主要在项目中负责美术与一部分的玩法创意的提出。</span> <span class="lang-en">Created during a Global Game Jam. As a team project, I was mainly responsible for art and contributed gameplay design ideas.</span> </p> </div> </div> </section> <div class="container detail-body"> <div class="video-embed"> <div class="video-embed__wrapper"> <video src="https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/f307c0365145403721220048269/arD3pFf6eAQA.mp4" controls autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;"></video> </div> </div> <div class="detail-image-wrap"> <img src="/images/GGJ.jpg" alt="" class="detail-image" loading="lazy"> </div> </div>  </main> <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;4ed754ab83244873862418ce4e581f0e&quot;}"></script><!-- End Cloudflare Web Analytics --> </body></html> <script>
+  /* ── Detail hero wavy dot field ── */
+  (function () {
+    var canvas = document.getElementById('detail-dots');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var t = 0;
+    var COLS = 36, ROWS = 10;
+
+    function resize() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    function draw() {
+      var W = canvas.width, H = canvas.height;
+      ctx.clearRect(0, 0, W, H);
+      t += 0.006;
+
+      var startX = W * 0.44;
+      var colStep = (W * 0.98 - startX) / (COLS - 1);
+      var rowStep = H / (ROWS - 1);
+
+      for (var row = 0; row < ROWS; row++) {
+        for (var col = 0; col < COLS; col++) {
+          var xFrac = col / (COLS - 1);
+          var x = startX + col * colStep;
+          var yBase = H * 0.04 + row * rowStep;
+          var w1 = Math.sin(col * 0.3 + t * 0.9) * rowStep * 0.5;
+          var w2 = Math.sin(col * 0.14 - row * 0.5 + t * 0.6) * rowStep * 0.28;
+          var w3 = Math.sin(col * 0.06 + row * 0.9 + t * 0.4) * rowStep * 0.16;
+          var y = yBase + w1 + w2 + w3;
+          if (y < 0 || y > H) continue;
+
+          var fadeX = Math.pow(xFrac, 0.45);
+          var yFrac = row / (ROWS - 1);
+          var edgeFade = Math.min(yFrac * 5, 1) * Math.min((1 - yFrac) * 5, 1);
+          var opacity = fadeX * edgeFade * 0.55;
+          if (opacity < 0.005) continue;
+
+          var r = 1.0 + xFrac * 0.4;
+          ctx.beginPath();
+          ctx.arc(x, y, r, 0, 6.283185);
+          ctx.fillStyle = 'rgba(215,215,215,' + Math.min(opacity, 0.65).toFixed(3) + ')';
+          ctx.fill();
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+</script>
