@@ -1,13 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>UE PCG 项目 - 王宇翔</title><script>
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>UE PCG 项目 - 王宇翔</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"><script>
       (function () {
-        const theme = localStorage.getItem('theme');
-        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          document.documentElement.setAttribute('data-theme', 'dark');
-        }
         var lang = localStorage.getItem('lang') || 'cn';
         document.documentElement.setAttribute('data-lang', lang);
       })();
-    </script><link rel="stylesheet" href="/_astro/index.BNJE74EC.css"></head> <body> <div class="container"> <header class="site-header"> <div class="site-header__name"> <a href="/">WANG YUXIANG</a> </div> <div class="site-header__controls"> <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language"> <span id="lang-label">EN</span> </button> <script>
+    </script><link rel="stylesheet" href="/_astro/index.i1lCbOyS.css"></head> <body> <header class="site-header"> <div class="container site-header__inner"> <div class="site-header__name"> <a href="/">WANG YUXIANG</a> </div> <div class="site-header__controls"> <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language"> <span id="lang-label">EN</span> </button> <script>
   (function () {
     const btn = document.getElementById('lang-toggle');
     const label = document.getElementById('lang-label');
@@ -26,25 +22,4 @@
       applyLang(next);
     });
   })();
-</script> <button class="dark-toggle" id="dark-toggle" type="button" aria-label="切换深色模式"> <span id="toggle-icon">☀</span> </button> <script>
-  (function () {
-    const btn = document.getElementById('dark-toggle');
-    const icon = document.getElementById('toggle-icon');
-    function updateIcon() {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      icon.textContent = isDark ? '☾' : '☀';
-    }
-    updateIcon();
-    btn.addEventListener('click', function () {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-      }
-      updateIcon();
-    });
-  })();
-</script> </div> </header> <main>  <div class="project-detail"> <a class="back-link" href="/"> <span class="lang-cn">← 返回首页</span> <span class="lang-en">← Back to Home</span> </a>  <img class="project-detail__cover" src="/images/ue-pcg-cover.jpg" alt="UE PCG 项目"> <h1 class="project-detail__title"> <span class="lang-cn">UE PCG 项目</span> <span class="lang-en">UE PCG Project</span> </h1> <p class="project-detail__description"> <span class="lang-cn">该项目的参考来自于网络教程，我因为想要学习ue5而制作的项目.主要搭建了一套在ue5内可以使用的程序化资产，并通过该套资产搭建起了这个片段的主体形状，之后使用另一套程序化植被资产进行资产的完善，再添加由speed tree制作的视觉中心的树木.最后再通过雾片，灯光，鸟群粒子等营造整体氛围。</span> <span class="lang-en">A UE5 learning project inspired by online tutorials. I built a set of procedural assets to form the main landscape, then added procedural foliage and a focal-point tree created in SpeedTree. Fog cards, lighting, and bird-flock particles complete the atmosphere.</span> </p> <div class="video-embed"> <div class="video-embed__wrapper"> <video src="https://1417160487.vod-qcloud.com/d8e03951vodtranscq1417160487/076e21205145403719700525575/v.f100070.mp4" controls autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;"></video> </div> </div> </div>  </main> </div> <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;4ed754ab83244873862418ce4e581f0e&quot;}"></script><!-- End Cloudflare Web Analytics --> </body></html>
+</script> </div> </div> </header> <main>  <div class="container"> <div class="project-detail"> <a class="back-link" href="/"> <span class="lang-cn">← 返回首页</span> <span class="lang-en">← Back to Home</span> </a>  <img class="project-detail__cover" src="/images/ue-pcg-cover.jpg" alt="UE PCG 项目"> <h1 class="project-detail__title"> <span class="lang-cn">UE PCG 项目</span> <span class="lang-en">UE PCG Project</span> </h1> <p class="project-detail__description"> <span class="lang-cn">该项目的参考来自于网络教程，我因为想要学习ue5而制作的项目.主要搭建了一套在ue5内可以使用的程序化资产，并通过该套资产搭建起了这个片段的主体形状，之后使用另一套程序化植被资产进行资产的完善，再添加由speed tree制作的视觉中心的树木.最后再通过雾片，灯光，鸟群粒子等营造整体氛围。</span> <span class="lang-en">A UE5 learning project inspired by online tutorials. I built a set of procedural assets to form the main landscape, then added procedural foliage and a focal-point tree created in SpeedTree. Fog cards, lighting, and bird-flock particles complete the atmosphere.</span> </p> <div class="video-embed"> <div class="video-embed__wrapper"> <video src="https://1417160487.vod-qcloud.com/d8e03951vodtranscq1417160487/076e21205145403719700525575/v.f100070.mp4" controls autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;"></video> </div> </div> </div> </div>  </main> <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;4ed754ab83244873862418ce4e581f0e&quot;}"></script><!-- End Cloudflare Web Analytics --> </body></html>

@@ -1,13 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>王煜翔 - 作品集</title><script>
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>王煜翔 - 作品集</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"><script>
       (function () {
-        const theme = localStorage.getItem('theme');
-        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          document.documentElement.setAttribute('data-theme', 'dark');
-        }
         var lang = localStorage.getItem('lang') || 'cn';
         document.documentElement.setAttribute('data-lang', lang);
       })();
-    </script><link rel="stylesheet" href="/_astro/index.BNJE74EC.css"></head> <body> <div class="container"> <header class="site-header"> <div class="site-header__name"> <a href="/">WANG YUXIANG</a> </div> <div class="site-header__controls"> <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language"> <span id="lang-label">EN</span> </button> <script>
+    </script><link rel="stylesheet" href="/_astro/index.i1lCbOyS.css"></head> <body> <header class="site-header"> <div class="container site-header__inner"> <div class="site-header__name"> <a href="/">WANG YUXIANG</a> </div> <div class="site-header__controls"> <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language"> <span id="lang-label">EN</span> </button> <script>
   (function () {
     const btn = document.getElementById('lang-toggle');
     const label = document.getElementById('lang-label');
@@ -26,25 +22,80 @@
       applyLang(next);
     });
   })();
-</script> <button class="dark-toggle" id="dark-toggle" type="button" aria-label="切换深色模式"> <span id="toggle-icon">☀</span> </button> <script>
+</script> </div> </div> </header> <main>  <section class="hero"> <canvas id="hero-dots" class="hero__dots" aria-hidden="true"></canvas> <div class="hero__deco-tl" aria-hidden="true"> <div class="hero__deco-bracket"></div> <span class="hero__deco-slashes">/ / / / /</span> </div> <span class="hero__deco-plus" aria-hidden="true">+</span> <svg class="hero__deco-lines" aria-hidden="true" viewBox="0 0 260 160" fill="none" preserveAspectRatio="none"> <line x1="0" y1="145" x2="250" y2="5" stroke="white" stroke-width="0.7" stroke-opacity="0.12"></line> <line x1="0" y1="160" x2="210" y2="35" stroke="white" stroke-width="0.7" stroke-opacity="0.07"></line> </svg> <div class="container hero__inner"> <div class="hero__content"> <h1 class="hero__name"> <span class="lang-cn">王煜翔</span> <span class="lang-en">WANG Yuxiang</span> </h1> <p class="hero__school"> <span class="lang-cn">米兰新美术学院 (Nuova Accademia di Belle Arti, Milano)</span> <span class="lang-en">Nuova Accademia di Belle Arti, Milano (NABA)</span> </p> <ul class="hero__resume-items lang-cn"> <li>专业： 创意技术(Creative Technology)——游戏/动画方向</li><li>2026届在读本科生</li> </ul> <ul class="hero__resume-items lang-en"> <li>Major: Creative Technology — Game / Animation Track</li><li>Undergraduate, Class of 2026</li> </ul> <p class="hero__intro"> <span class="lang-cn">我是一名聚焦角色绑定、技术美术与视觉叙事的创作者，具备游戏设计、影视短片及 3D/VFX 制作经验，正持续探索技术工具与艺术表达的结合。</span> <span class="lang-en">I am a creator focused on character rigging, technical art, and visual storytelling, with experience in game design, short films, and 3D/VFX production. I am continuously exploring the intersection of technical tools and artistic expression.</span> </p> </div> <div class="hero__cta-wrap"> <a class="hero__cta" href="#featured-section"> <span class="lang-cn">查看作品</span> <span class="lang-en">View Works</span> </a> </div> </div> </section> <div class="container projects-root"> <section class="project-section" id="featured-section"> <h2 class="project-section__heading"> <span class="lang-cn">主要项目</span> <span class="lang-en">Featured Projects</span> </h2> <div class="project-grid"> <a class="project-card" href="/projects/face-rigging/"> <div class="project-card__media"> <img class="project-card__cover" src="/images/face-rigging-cover.jpg" alt="Face Rigging 项目" loading="lazy"> <div class="project-card__overlay" aria-hidden="true"></div> </div> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">Face Rigging 项目</span> <span class="lang-en">Face Rigging Project</span> </div> </div> </a><a class="project-card" href="/projects/full-body-rigging/"> <div class="project-card__media"> <img class="project-card__cover" src="/images/full-body-rigging-cover.jpg" alt="Full Body Rigging 项目" loading="lazy"> <div class="project-card__overlay" aria-hidden="true"></div> </div> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">Full Body Rigging 项目</span> <span class="lang-en">Full Body Rigging Project</span> </div> </div> </a><a class="project-card" href="/projects/ue-pcg/"> <div class="project-card__media"> <img class="project-card__cover" src="/images/ue-pcg-cover.jpg" alt="UE PCG 项目" loading="lazy"> <div class="project-card__overlay" aria-hidden="true"></div> </div> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">UE PCG 项目</span> <span class="lang-en">UE PCG Project</span> </div> </div> </a><a class="project-card" href="/projects/whiteout/"> <div class="project-card__media"> <img class="project-card__cover" src="/images/whiteout-cover.jpg" alt="Whiteout 游戏开发项目" loading="lazy"> <div class="project-card__overlay" aria-hidden="true"></div> </div> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">Whiteout 游戏开发项目</span> <span class="lang-en">Whiteout Game Dev Project</span> </div> </div> </a> </div> </section> <section class="project-section"> <h2 class="project-section__heading"> <span class="lang-cn">其他项目</span> <span class="lang-en">Other Projects</span> </h2> <div class="project-grid"> <a class="project-card" href="/projects/animation/"> <div class="project-card__media"> <img class="project-card__cover" src="/images/animation-cover.jpg" alt="Animation 项目" loading="lazy"> <div class="project-card__overlay" aria-hidden="true"></div> </div> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">Animation 项目</span> <span class="lang-en">Animation Project</span> </div> </div> </a><a class="project-card" href="/projects/films/"> <div class="project-card__media"> <img class="project-card__cover" src="/images/films-cover.jpg" alt="影像编导作品集" loading="lazy"> <div class="project-card__overlay" aria-hidden="true"></div> </div> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">影像编导作品集</span> <span class="lang-en">Film Directing Portfolio</span> </div> </div> </a><a class="project-card" href="/projects/davinci/"> <div class="project-card__media"> <img class="project-card__cover" src="/images/davinci-cover.jpg" alt="DaVinci 项目" loading="lazy"> <div class="project-card__overlay" aria-hidden="true"></div> </div> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">DaVinci 项目</span> <span class="lang-en">DaVinci Project</span> </div> </div> </a><a class="project-card" href="/projects/maya-light/"> <div class="project-card__media"> <img class="project-card__cover" src="/images/maya-light-cover.jpg" alt="Maya Light 项目" loading="lazy"> <div class="project-card__overlay" aria-hidden="true"></div> </div> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">Maya Light 项目</span> <span class="lang-en">Maya Lighting Project</span> </div> </div> </a><a class="project-card" href="/projects/nuke/"> <div class="project-card__media"> <img class="project-card__cover" src="/images/nuke-cover.jpg" alt="Nuke 项目" loading="lazy"> <div class="project-card__overlay" aria-hidden="true"></div> </div> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">Nuke 项目</span> <span class="lang-en">Nuke Project</span> </div> </div> </a><a class="project-card" href="/projects/taison/"> <div class="project-card__media"> <img class="project-card__cover" src="/images/taison-cover.jpg" alt="Taison 项目" loading="lazy"> <div class="project-card__overlay" aria-hidden="true"></div> </div> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">Taison 项目</span> <span class="lang-en">Taison Project</span> </div> </div> </a> </div> </section> </div>  </main> <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;4ed754ab83244873862418ce4e581f0e&quot;}"></script><!-- End Cloudflare Web Analytics --> </body></html> <noscript> <style>.project-card { opacity: 1 !important; }</style> </noscript> <script>
+  /* ── Wavy dot field ── */
   (function () {
-    const btn = document.getElementById('dark-toggle');
-    const icon = document.getElementById('toggle-icon');
-    function updateIcon() {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      icon.textContent = isDark ? '☾' : '☀';
+    var canvas = document.getElementById('hero-dots');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var t = 0;
+    var COLS = 58, ROWS = 15;
+
+    function resize() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
     }
-    updateIcon();
-    btn.addEventListener('click', function () {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    function draw() {
+      var W = canvas.width, H = canvas.height;
+      ctx.clearRect(0, 0, W, H);
+      t += 0.007;
+
+      var startX = W * 0.16;
+      var colStep = (W * 0.985 - startX) / (COLS - 1);
+      var rowStep = H / (ROWS - 1);
+
+      for (var row = 0; row < ROWS; row++) {
+        for (var col = 0; col < COLS; col++) {
+          var xFrac = col / (COLS - 1);
+          var x = startX + col * colStep;
+
+          var yBase = H * 0.03 + row * rowStep;
+          var w1 = Math.sin(col * 0.27 + t * 0.9) * rowStep * 0.55;
+          var w2 = Math.sin(col * 0.13 - row * 0.55 + t * 0.6) * rowStep * 0.3;
+          var w3 = Math.sin(col * 0.055 + row * 0.9 + t * 0.4) * rowStep * 0.18;
+          var y = yBase + w1 + w2 + w3;
+          if (y < 0 || y > H) continue;
+
+          var fadeX = Math.pow(xFrac, 0.4);
+          var yFrac = row / (ROWS - 1);
+          var edgeFade = Math.min(yFrac * 6, 1) * Math.min((1 - yFrac) * 6, 1);
+          var leftCornerFade = Math.min(1, xFrac * 1.8 + yFrac * 0.3 + 0.15);
+          var opacity = fadeX * edgeFade * leftCornerFade * 0.85;
+          if (opacity < 0.005) continue;
+
+          var r = 1.2 + xFrac * 0.5;
+          ctx.beginPath();
+          ctx.arc(x, y, r, 0, 6.283185);
+          ctx.fillStyle = 'rgba(215,215,215,' + Math.min(opacity, 0.88).toFixed(3) + ')';
+          ctx.fill();
+        }
       }
-      updateIcon();
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+
+  /* ── Card entrance (Intersection Observer) ── */
+  (function () {
+    var cards = Array.from(document.querySelectorAll('.project-card'));
+    if (!cards.length) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('card--visible');
+          observer.unobserve(entry.target);
+          entry.target.addEventListener('transitionend', function () {
+            entry.target.style.transitionDelay = '';
+          }, { once: true });
+        }
+      });
+    }, { threshold: 0.05 });
+    cards.forEach(function (card, i) {
+      card.style.transitionDelay = (i * 0.06) + 's';
+      observer.observe(card);
     });
   })();
-</script> </div> </header> <main>  <section class="hero"> <h1 class="hero__name"> <span class="lang-cn">王煜翔</span> <span class="lang-en">WANG Yuxiang</span> </h1> <p class="hero__school"> <span class="lang-cn">米兰新美术学院 (Nuova Accademia di Belle Arti, Milano)</span> <span class="lang-en">Nuova Accademia di Belle Arti, Milano (NABA)</span> </p> <p class="hero__intro"> <span class="lang-cn">我是一名聚焦角色绑定、技术美术与视觉叙事的创作者，具备游戏设计、影视短片及 3D/VFX 制作经验，正持续探索技术工具与艺术表达的结合。</span> <span class="lang-en">I am a creator focused on character rigging, technical art, and visual storytelling, with experience in game design, short films, and 3D/VFX production. I am continuously exploring the intersection of technical tools and artistic expression.</span> </p> <ul class="hero__resume-items lang-cn"> <li>专业： 创意技术(Creative Technology)——游戏/动画方向</li><li>2026届在读本科生</li> </ul> <ul class="hero__resume-items lang-en"> <li>Major: Creative Technology — Game / Animation Track</li><li>Undergraduate, Class of 2026</li> </ul> </section> <section class="project-section"> <h2 class="project-section__heading"> <span class="lang-cn">主要项目</span> <span class="lang-en">Featured Projects</span> </h2> <div class="project-grid"> <a class="project-card" href="/projects/face-rigging/"> <img class="project-card__cover" src="/images/face-rigging-cover.jpg" alt="Face Rigging 项目" loading="lazy"> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">Face Rigging 项目</span> <span class="lang-en">Face Rigging Project</span> </div> </div> </a><a class="project-card" href="/projects/full-body-rigging/"> <img class="project-card__cover" src="/images/full-body-rigging-cover.jpg" alt="Full Body Rigging 项目" loading="lazy"> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">Full Body Rigging 项目</span> <span class="lang-en">Full Body Rigging Project</span> </div> </div> </a><a class="project-card" href="/projects/taison/"> <img class="project-card__cover" src="/images/taison-cover.jpg" alt="Taison 项目" loading="lazy"> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">Taison 项目</span> <span class="lang-en">Taison Project</span> </div> </div> </a><a class="project-card" href="/projects/ue-pcg/"> <img class="project-card__cover" src="/images/ue-pcg-cover.jpg" alt="UE PCG 项目" loading="lazy"> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">UE PCG 项目</span> <span class="lang-en">UE PCG Project</span> </div> </div> </a><a class="project-card" href="/projects/whiteout/"> <img class="project-card__cover" src="/images/whiteout-cover.jpg" alt="Whiteout 游戏开发项目" loading="lazy"> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">Whiteout 游戏开发项目</span> <span class="lang-en">Whiteout Game Dev Project</span> </div> </div> </a> </div> </section> <section class="project-section"> <h2 class="project-section__heading"> <span class="lang-cn">其他项目</span> <span class="lang-en">Other Projects</span> </h2> <div class="project-grid"> <a class="project-card" href="/projects/animation/"> <img class="project-card__cover" src="/images/animation-cover.jpg" alt="Animation 项目" loading="lazy"> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">Animation 项目</span> <span class="lang-en">Animation Project</span> </div> </div> </a><a class="project-card" href="/projects/films/"> <img class="project-card__cover" src="/images/films-cover.jpg" alt="影像编导作品集" loading="lazy"> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">影像编导作品集</span> <span class="lang-en">Film Directing Portfolio</span> </div> </div> </a><a class="project-card" href="/projects/davinci/"> <img class="project-card__cover" src="/images/davinci-cover.jpg" alt="DaVinci 项目" loading="lazy"> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">DaVinci 项目</span> <span class="lang-en">DaVinci Project</span> </div> </div> </a><a class="project-card" href="/projects/maya-light/"> <img class="project-card__cover" src="/images/maya-light-cover.jpg" alt="Maya Light 项目" loading="lazy"> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">Maya Light 项目</span> <span class="lang-en">Maya Lighting Project</span> </div> </div> </a><a class="project-card" href="/projects/nuke/"> <img class="project-card__cover" src="/images/nuke-cover.jpg" alt="Nuke 项目" loading="lazy"> <div class="project-card__info"> <div class="project-card__title"> <span class="lang-cn">Nuke 项目</span> <span class="lang-en">Nuke Project</span> </div> </div> </a> </div> </section> </main> </div> <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;4ed754ab83244873862418ce4e581f0e&quot;}"></script><!-- End Cloudflare Web Analytics --> </body></html>
+</script>

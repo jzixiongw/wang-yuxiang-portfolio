@@ -1,13 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Maya Light 项目 - 王宇翔</title><script>
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Maya Light 项目 - 王宇翔</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"><script>
       (function () {
-        const theme = localStorage.getItem('theme');
-        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          document.documentElement.setAttribute('data-theme', 'dark');
-        }
         var lang = localStorage.getItem('lang') || 'cn';
         document.documentElement.setAttribute('data-lang', lang);
       })();
-    </script><link rel="stylesheet" href="/_astro/index.BNJE74EC.css"></head> <body> <div class="container"> <header class="site-header"> <div class="site-header__name"> <a href="/">WANG YUXIANG</a> </div> <div class="site-header__controls"> <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language"> <span id="lang-label">EN</span> </button> <script>
+    </script><link rel="stylesheet" href="/_astro/index.i1lCbOyS.css"></head> <body> <header class="site-header"> <div class="container site-header__inner"> <div class="site-header__name"> <a href="/">WANG YUXIANG</a> </div> <div class="site-header__controls"> <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language"> <span id="lang-label">EN</span> </button> <script>
   (function () {
     const btn = document.getElementById('lang-toggle');
     const label = document.getElementById('lang-label');
@@ -26,25 +22,4 @@
       applyLang(next);
     });
   })();
-</script> <button class="dark-toggle" id="dark-toggle" type="button" aria-label="切换深色模式"> <span id="toggle-icon">☀</span> </button> <script>
-  (function () {
-    const btn = document.getElementById('dark-toggle');
-    const icon = document.getElementById('toggle-icon');
-    function updateIcon() {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      icon.textContent = isDark ? '☾' : '☀';
-    }
-    updateIcon();
-    btn.addEventListener('click', function () {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-      }
-      updateIcon();
-    });
-  })();
-</script> </div> </header> <main>  <div class="project-detail"> <a class="back-link" href="/"> <span class="lang-cn">← 返回首页</span> <span class="lang-en">← Back to Home</span> </a>  <img class="project-detail__cover" src="/images/maya-light-cover.jpg" alt="Maya Light 项目"> <h1 class="project-detail__title"> <span class="lang-cn">Maya Light 项目</span> <span class="lang-en">Maya Lighting Project</span> </h1> <p class="project-detail__description"> <span class="lang-cn">该项目主要尝试在maya中制作夕阳下的灯光作品。</span> <span class="lang-en">This project focused on creating a sunset lighting scene in Maya.</span> </p> <div class="video-embed"> <div class="video-embed__wrapper"> <video src="https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/ac66521a5145403719774313122/akvG5PwjiyEA.mp4" controls autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;"></video> </div> </div> </div>  </main> </div> <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;4ed754ab83244873862418ce4e581f0e&quot;}"></script><!-- End Cloudflare Web Analytics --> </body></html>
+</script> </div> </div> </header> <main>  <div class="container"> <div class="project-detail"> <a class="back-link" href="/"> <span class="lang-cn">← 返回首页</span> <span class="lang-en">← Back to Home</span> </a>  <img class="project-detail__cover" src="/images/maya-light-cover.jpg" alt="Maya Light 项目"> <h1 class="project-detail__title"> <span class="lang-cn">Maya Light 项目</span> <span class="lang-en">Maya Lighting Project</span> </h1> <p class="project-detail__description"> <span class="lang-cn">该项目主要尝试在maya中制作夕阳下的灯光作品。</span> <span class="lang-en">This project focused on creating a sunset lighting scene in Maya.</span> </p> <div class="video-embed"> <div class="video-embed__wrapper"> <video src="https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/ac66521a5145403719774313122/akvG5PwjiyEA.mp4" controls autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;"></video> </div> </div> </div> </div>  </main> <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;4ed754ab83244873862418ce4e581f0e&quot;}"></script><!-- End Cloudflare Web Analytics --> </body></html>

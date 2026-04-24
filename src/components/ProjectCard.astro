@@ -10,12 +10,14 @@ const { href, cover, title, titleEn } = Astro.props;
 ---
 
 <a class="project-card" href={href}>
-  <img class="project-card__cover" src={cover} alt={title} loading="lazy" />
+  <div class="project-card__media">
+    <img class="project-card__cover" src={cover} alt={title} loading="lazy" />
+    <div class="project-card__overlay" aria-hidden="true"></div>
+  </div>
   <div class="project-card__info">
     <div class="project-card__title">
       <span class="lang-cn">{title}</span>
       {titleEn && <span class="lang-en">{titleEn}</span>}
-    </div>
     </div>
   </div>
 </a>

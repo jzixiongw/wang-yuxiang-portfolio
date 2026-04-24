@@ -19,6 +19,7 @@ const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
 ---
 
 <Layout title={`${project.title} - 王宇翔`}>
+  <div class="container">
   <div class="project-detail">
     <a class="back-link" href={`${base}/`}>
       <span class="lang-cn">{ui.cn.backHome}</span>
@@ -63,5 +64,6 @@ const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '');
         }
       </>
     )}
+  </div>
   </div>
 </Layout>

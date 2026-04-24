@@ -116,7 +116,7 @@ export const projects: Project[] = [
     cover: '/images/taison-cover.jpg',
     description: '这是一个比较抽象聚焦于概念的短片作品，由我和其他团队成员一起在ue5中制作.所有的资产都为团队自己制作.我在其中参与了前中后期的大部分工作，诸如前期的想法落地，分镜，角色，特效等.该作品入围了意大利全国性赛事-TGA的决赛圈，并受邀在罗马展出。',
     descriptionEn: 'An abstract, concept-driven short film created collaboratively in UE5. All assets were made by the team. I contributed to most stages — from ideation, storyboarding, and character work to VFX. The piece was shortlisted for the Italian national TGA competition and exhibited in Rome.',
-    featured: true,
+    featured: false,
     vodEmbedUrls: [
       'https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/8d3853525145403719699195456/LPiJSN9vC4MA.mp4',
     ],
