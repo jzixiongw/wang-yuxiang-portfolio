@@ -31,7 +31,10 @@ export const projects: Project[] = [
     description: '运用自己制作的面部绑定工具包，搭建了完整的面部绑定系统. 项目中依次完成了面部基础骨骼搭建、控制器创建、权重制作、GUI设计与链接、眼部功能开发、Wrap4D混合变形制作与导入、Maya中基于代码的混合变形系统搭建，以及将混合变形融合进现有绑定流程。同时还包括嘴部表情驱动、拉链嘴、嘴唇整体控制、嘴部与下巴/鼻子的联动、褶皱法线贴图制作与连接、眉毛与前额表情协同、次级控制器整合与SDK镜像、常用Deformer应用，以及头部挤压拉伸等表情增强功能。最终完成了一个集较完整角色面部绑定系统。',
     descriptionEn: 'Built a complete facial rigging system using a custom-made facial rigging toolkit. The project covers facial skeleton setup, controller creation, weight painting, GUI design & linking, eye functionality, Wrap4D blendshape creation & import, code-based blendshape system in Maya, and integrating blendshapes into the existing rig pipeline. It also includes mouth expression drivers, zipper lips, overall lip control, mouth-jaw/nose linkage, wrinkle normal map creation & connection, eyebrow-forehead coordination, secondary controller integration with SDK mirroring, common Deformer applications, and head squash & stretch for expression enhancement.',
     featured: true,
-    vodEmbedUrls: ['https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/8d37d8135145403719699194863/oO9SSARWUAYA.mp4'],
+    vodEmbedUrls: 
+      ['https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/1d1928e95145403723719898341/32tQnvu7XkQA.mp4',
+        'https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/2da796a75145403723686428734/LZcJOEotSAsA.mp4'
+      ],
   },
   {
     slug: 'full-body-rigging',
@@ -53,7 +56,7 @@ export const projects: Project[] = [
     description: '使用houdini制作的水球爆炸的效果，使用了Vellum系统，运用了少量的VEX进行制作.',
     descriptionEn: 'A water balloon explosion effect created in Houdini, using the Vellum solver with a small amount of VEX.',
     featured: false,
-    vodEmbedUrls: [],
+    vodEmbedUrls: ['https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/1d18986c5145403723719897255/L3S0cyDzaqoA.mp4'],
   },
   {
     slug: 'animation',
@@ -142,7 +145,10 @@ export const projects: Project[] = [
     description: '该项目的参考来自于网络教程，我因为想要学习ue5而制作的项目.主要搭建了一套在ue5内可以使用的程序化资产，并通过该套资产搭建起了这个片段的主体形状，之后使用另一套程序化植被资产进行资产的完善，再添加由speed tree制作的视觉中心的树木.最后再通过雾片，灯光，鸟群粒子等营造整体氛围。',
     descriptionEn: 'A UE5 learning project inspired by online tutorials. I built a set of procedural assets to form the main landscape, then added procedural foliage and a focal-point tree created in SpeedTree. Fog cards, lighting, and bird-flock particles complete the atmosphere.',
     featured: true,
-    vodEmbedUrls: ['https://1417160487.vod-qcloud.com/d8e03951vodtranscq1417160487/076e21205145403719700525575/v.f100070.mp4'],
+    vodEmbedUrls: 
+      ['https://1417160487.vod-qcloud.com/d8e03951vodtranscq1417160487/076e21205145403719700525575/v.f100070.mp4', 
+      'https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/2b7697085145403723686348572/Ok6R9qpJlvIA.mp4',
+      'https://1417160487.vod-qcloud.com/01f64ba9vodcq1417160487/2b7680dd5145403723686348003/BfVW0D9CgPQA.mp4'],
   },
   {
     slug: 'whiteout',
